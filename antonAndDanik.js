@@ -1,0 +1,4 @@
+var antonAndDanik = (n,s)=>{
+
+	
+}

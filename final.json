@@ -1,0 +1,431 @@
+
+
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "origin": {
+      "$id": "/properties/origin",
+      "type": "object",
+      "properties": {
+        "contact": {
+          "$id": "/properties/origin/properties/contact",
+          "type": "object",
+          "properties": {
+            "name": {
+              "$id": "/properties/origin/properties/contact/properties/name",
+              "type": "string",
+              "title": "The Name Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "STE LOG'S"
+              ]
+            },
+            "email": {
+              "$id": "/properties/origin/properties/contact/properties/email",
+              "type": "string",
+              "title": "The Email Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "olivier.clery@redoute.be"
+              ]
+            },
+            "phone": {
+              "$id": "/properties/origin/properties/contact/properties/phone",
+              "type": "string",
+              "title": "The Phone Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "+3256851211"
+              ]
+            },
+            "secondary_phone": {
+              "$id": "/properties/origin/properties/contact/properties/secondary_phone",
+              "type": "string",
+              "title": "The Secondary_phone Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "+32478258780"
+              ]
+            }
+          }
+        },
+        "address": {
+          "$id": "/properties/origin/properties/address",
+          "type": "object",
+          "properties": {
+            "country_code": {
+              "$id": "/properties/origin/properties/address/properties/country_code",
+              "type": "string",
+              "title": "The Country_code Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "FR"
+              ]
+            },
+            "locality": {
+              "$id": "/properties/origin/properties/address/properties/locality",
+              "type": "string",
+              "title": "The Locality Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Anzin"
+              ]
+            },
+            "postal_code": {
+              "$id": "/properties/origin/properties/address/properties/postal_code",
+              "type": "string",
+              "title": "The Postal_code Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "59410"
+              ]
+            },
+            "address_line1": {
+              "$id": "/properties/origin/properties/address/properties/address_line1",
+              "type": "string",
+              "title": "The Address_line1 Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "PA EUROPESCAUT"
+              ]
+            },
+            "address_line2": {
+              "$id": "/properties/origin/properties/address/properties/address_line2",
+              "type": "string",
+              "title": "The Address_line2 Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Acces Rue des Emailleries"
+              ]
+            },
+            "organisation": {
+              "$id": "/properties/origin/properties/address/properties/organisation",
+              "type": "boolean",
+              "title": "The Organisation Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                true
+              ]
+            }
+          }
+        },
+        "language_code": {
+          "$id": "/properties/origin/properties/language_code",
+          "type": "string",
+          "title": "The Language_code Schema.",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "fr-FR"
+          ]
+        }
+      }
+    },
+    "destination ": {
+      "$id": "/properties/destination ",
+      "type": "object",
+      "properties": {
+        "contact": {
+          "$id": "/properties/destination /properties/contact",
+          "type": "object",
+          "properties": {
+            "name": {
+              "$id": "/properties/destination /properties/contact/properties/name",
+              "type": "string",
+              "title": "The Name Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Laurent Lejeune"
+              ]
+            },
+            "email": {
+              "$id": "/properties/destination /properties/contact/properties/email",
+              "type": "string",
+              "title": "The Email Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "llejeune@redoute.fr"
+              ]
+            },
+            "phone": {
+              "$id": "/properties/destination /properties/contact/properties/phone",
+              "type": "string",
+              "title": "The Phone Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "0320697211"
+              ]
+            },
+            "secondary_phone": {
+              "$id": "/properties/destination /properties/contact/properties/secondary_phone",
+              "type": "string",
+              "title": "The Secondary_phone Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "+32478258780"
+              ]
+            }
+          }
+        },
+        "address": {
+          "$id": "/properties/destination /properties/address",
+          "type": "object",
+          "properties": {
+            "country_code": {
+              "$id": "/properties/destination /properties/address/properties/country_code",
+              "type": "string",
+              "title": "The Country_code Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "FR"
+              ]
+            },
+            "locality": {
+              "$id": "/properties/destination /properties/address/properties/locality",
+              "type": "string",
+              "title": "The Locality Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Wasquehal"
+              ]
+            },
+            "postal_code": {
+              "$id": "/properties/destination /properties/address/properties/postal_code",
+              "type": "string",
+              "title": "The Postal_code Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "59290"
+              ]
+            },
+            "address_line1": {
+              "$id": "/properties/destination /properties/address/properties/address_line1",
+              "type": "string",
+              "title": "The Address_line1 Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "78 Rue Delerue"
+              ]
+            },
+            "address_line2": {
+              "$id": "/properties/destination /properties/address/properties/address_line2",
+              "type": "string",
+              "title": "The Address_line2 Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Acces Rue des Emailleries"
+              ]
+            },
+            "organisation": {
+              "$id": "/properties/destination /properties/address/properties/organisation",
+              "type": "boolean",
+              "title": "The Organisation Schema.",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                false
+              ]
+            }
+          }
+        },
+        "language_code": {
+          "$id": "/properties/destination /properties/language_code",
+          "type": "string",
+          "title": "The Language_code Schema.",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "fr-FR"
+          ]
+        }
+      }
+    },
+    "packages": {
+      "$id": "/properties/packages",
+      "type": "array",
+      "items": {
+        "$id": "/properties/packages/items",
+        "type": "object",
+        "properties": {
+          "items": {
+            "$id": "/properties/packages/items/properties/items",
+            "type": "array",
+            "items": {
+              "$id": "/properties/packages/items/properties/items/items",
+              "type": "object",
+              "properties": {
+                "product": {
+                  "$id": "/properties/packages/items/properties/items/items/properties/product",
+                  "type": "object",
+                  "properties": {
+                    "sku": {
+                      "$id": "/properties/packages/items/properties/items/items/properties/product/properties/sku",
+                      "type": "string",
+                      "title": "The Sku Schema.",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "782456-A"
+                      ]
+                    },
+                    "fragile": {
+                      "$id": "/properties/packages/items/properties/items/items/properties/product/properties/fragile",
+                      "type": "boolean",
+                      "title": "The Fragile Schema.",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    },
+                    "hs_code": {
+                      "$id": "/properties/packages/items/properties/items/items/properties/product/properties/hs_code",
+                      "type": "string",
+                      "title": "The Hs_code Schema.",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "1234567890"
+                      ]
+                    },
+                    "cost": {
+                      "$id": "/properties/packages/items/properties/items/items/properties/product/properties/cost",
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/cost/properties/amount",
+                          "type": "integer",
+                          "title": "The Amount Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": 0,
+                          "examples": [
+                            100
+                          ]
+                        },
+                        "currency": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/cost/properties/currency",
+                          "type": "string",
+                          "title": "The Currency Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                            "EUR"
+                          ]
+                        }
+                      }
+                    },
+                    "dimensions": {
+                      "$id": "/properties/packages/items/properties/items/items/properties/product/properties/dimensions",
+                      "type": "object",
+                      "properties": {
+                        "length": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/dimensions/properties/length",
+                          "type": "integer",
+                          "title": "The Length Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": 0,
+                          "examples": [
+                            10
+                          ]
+                        },
+                        "width": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/dimensions/properties/width",
+                          "type": "integer",
+                          "title": "The Width Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": 0,
+                          "examples": [
+                            10
+                          ]
+                        },
+                        "height": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/dimensions/properties/height",
+                          "type": "integer",
+                          "title": "The Height Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": 0,
+                          "examples": [
+                            10
+                          ]
+                        },
+                        "unit": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/dimensions/properties/unit",
+                          "type": "string",
+                          "title": "The Unit Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                            "cm"
+                          ]
+                        }
+                      }
+                    },
+                    "weight": {
+                      "$id": "/properties/packages/items/properties/items/items/properties/product/properties/weight",
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/weight/properties/value",
+                          "type": "integer",
+                          "title": "The Value Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": 0,
+                          "examples": [
+                            1
+                          ]
+                        },
+                        "unit": {
+                          "$id": "/properties/packages/items/properties/items/items/properties/product/properties/weight/properties/unit",
+                          "type": "string",
+                          "title": "The Unit Schema.",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                            "kg"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "quantity": {
+                  "$id": "/properties/packages/items/properties/items/items/properties/quantity",
+                  "type": "integer",
+                  "title": "The Quantity Schema.",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    1
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

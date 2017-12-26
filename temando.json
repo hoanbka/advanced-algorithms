@@ -1,0 +1,142 @@
+{
+    "$schema": "http://temando.com/training/schema#",
+    "definitions": {
+        "location": {
+            "type": "object",
+            "properties": {
+                "type": "object",
+                "properties": {
+                    "contact": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "format": "phone"
+                            },
+                            "secondary_phone": {
+                                "type": "string",
+                                "format": "phone"
+                            }
+                        },
+                        "required": ["name", "email"]
+                    },
+                    "address": {
+                        "type": "object",
+                        "properties": {
+                            "country_code": {
+                                "type": "string"
+                            },
+                            "locality": {
+                                "type": "string"
+
+                            },
+                            "postal_code": {
+                                "type": "string"
+                            },
+                            "address_line1": {
+                                "type": "string"
+                            },
+                            "address_line2": {
+                                "type": "string"
+                            },
+                            "organisation": {
+                                "type": "boolean"
+                            }
+                        },
+                        "language_code": {
+                            "type": "string"
+                        },
+                        "required": ["country_code", "postal_code", "locality"]
+                    }
+                }
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "origin": {
+            "$ref": "#/definitions/location"
+        },
+        "destination": {
+            "$ref": "#/definitions/location"
+        },
+        "packages": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "product": {
+                                "type": "object",
+                                "properties": {
+                                    "sku": {
+                                        "type": "string"
+                                    },
+                                    "fragile": {
+                                        "type": "boolean"
+                                    },
+                                    "hs_code": {
+                                        "type": "string"
+                                    },
+                                    "cost": {
+                                        "type": "object",
+                                        "properties": {
+                                            "amount": {
+                                                "type": "Number"
+                                            },
+                                            "currency": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "dimensions": {
+                                        "type": "object",
+                                        "properties": {
+                                            "length": {
+                                                "type": "Number"
+                                            },
+                                            "width": {
+                                                "type": "Number"
+                                            },
+                                            "height": {
+                                                "type": "Number"
+                                            },
+                                            "unit": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "weight": {
+                                        "type": "object",
+                                        "properties": {
+                                            "value": {
+                                                "type": "Number"
+                                            },
+                                            "unit": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["dimensions", "weight"]
+                            },
+                            "quantity": {
+                                "type": "Integer",
+                                "minimum": 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
