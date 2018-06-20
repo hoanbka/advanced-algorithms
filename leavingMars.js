@@ -1,0 +1,4 @@
+function leavingMars(gates, destinations) {
+
+}
+
