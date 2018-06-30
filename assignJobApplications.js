@@ -7,10 +7,10 @@ function assignJobApplications(tsmCount, availableLocations, minExperience, jobA
         map.set(e, 1);
     })
 
-    jobApplications.map(e => {
-        let tmp = e.split(' ');
+    jobApplications.map(application => {
+        let [username, experience, location] = application.split(" ");
 
-        if (parseInt(tmp[1]) >= minExperience && map.get(tmp[2])) {
+        if (parseInt(experience) >= minExperience && map.get(location)) {
             ans.push(index++);
         } else {
             ans.push(-1);
@@ -56,10 +56,10 @@ function assignJobApplications(tsmCount, availableLocations, minExperience, jobA
     // in order to apply binary search, array should be sorted first
     availableLocations.sort();
 
-    jobApplications.map(e => {
-        let tmp = e.split(' ');
+    jobApplications.map(application => {
+        let [username, experience, location] = application.split(" ");
 
-        if (parseInt(tmp[1]) >= minExperience && binarySearch(availableLocations, tmp[2])) {
+        if (parseInt(experience) >= minExperience && binarySearch(availableLocations, location)) {
             ans.push(index++);
         } else {
             ans.push(-1);
