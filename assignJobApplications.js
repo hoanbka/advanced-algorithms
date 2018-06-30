@@ -1,4 +1,3 @@
-
 function assignJobApplications(tsmCount, availableLocations, minExperience, jobApplications) {
 
     let index = 1;
@@ -35,10 +34,10 @@ assignJobApplications = (t, l, z, j) => {
     a = []
     m = {}
     l.map(e => m[e] = 1)
-        
+
     j.map(e => {
         p = e.split(' ')
-        y = p[1]*1 >= z && m[p[2]] ? i++: -1
+        y = p[1] * 1 >= z && m[p[2]] ? i++ : -1
         a.push(y)
 
         i = i > t ? 1 : i
@@ -74,15 +73,15 @@ function assignJobApplications(tsmCount, availableLocations, minExperience, jobA
 }
 
 function binarySearch(arr, val) {
-    var lo = 0,
-        hi = arr.length - 1;
-    while (lo <= hi) {
-        var mid = Math.ceil((lo + hi) / 2);
+    let low = 0,
+        high = arr.length - 1;
+    while (low <= high) {
+        let mid = Math.ceil((low + high) / 2);
         if (arr[mid] === val) return true;
         if (arr[mid] < val) {
-            lo = mid + 1;
+            low = mid + 1;
         } else {
-            hi = mid - 1;
+            high = mid - 1;
         }
     }
     return false;
