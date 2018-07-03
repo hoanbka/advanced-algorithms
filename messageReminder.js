@@ -27,11 +27,6 @@ function messageReminder(sender, receiver, date) {
     return ans.sort();
 }
 
-function replace(str, index, chr) {
-    if (index > str.length - 1) return str;
-    return str.substr(0, index) + chr + str.substr(index + 1);
-}
-
 function messageHandler(s) {
-    return new Date(new Date(s).getTime() + 48 * 60 * 60 * 1000).toISOString().replace(/T|000Z/g,' ');
+    return new Date(new Date(s).getTime() + 48 * 60 * 60 * 1000).toISOString().replace(/T|000Z/g, ' ');
 }
