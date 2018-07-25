@@ -46,3 +46,8 @@ chunk = n => {
 
     return a.reverse()
 }
+
+// Test
+299 => "Two hundred ninety-nine"
+123456 => "One hundred twenty-three thousand four hundred fifty-six"
+600700 => "Six hundred thousand seven hundred"
