@@ -21,7 +21,7 @@ numberInWords = n => {
 
 read = n => {
     if (n <= 20) return first[n]
-    else if (n < 100) return n % 10 == 0 ? tens[parseInt(n.toString()[0])] : tens[parseInt(n.toString()[0])] + '-' + first[n % 10];
+    else if (n < 100) return n % 10 == 0 ? tens[~~(n / 10)] : tens[~~(n / 10)] + '-' + first[n % 10];
 
     if (n % 100 == 0) {
         return first[~~(n / 100)] + ' hundred'
@@ -47,7 +47,10 @@ chunk = n => {
     return a.reverse()
 }
 
+/*
 // Test
 299 => "Two hundred ninety-nine"
 123456 => "One hundred twenty-three thousand four hundred fifty-six"
 600700 => "Six hundred thousand seven hundred"
+
+*/
