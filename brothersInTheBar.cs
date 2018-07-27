@@ -1,4 +1,4 @@
-int brothersInTheBar(int[] glasses)
+int brothersInTheBar (int[] glasses)
         {   
             if(glasses.Length < 3) return 0;
             List<int> list = new List<int>();

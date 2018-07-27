@@ -32,7 +32,7 @@ function IsaacRule(steps, number) {
 
 }
 
-IsaacRule = (steps, number, count = 0, arr = [number], t = []) => {
+IsaacRule  = (steps, number, count = 0, arr = [number], t = []) => {
 
     // 3*x + 1 = number => x = (number-1)/3;
     // 2*x = number => x = number/2

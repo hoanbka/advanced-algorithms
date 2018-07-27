@@ -200,6 +200,7 @@ let brothersInTheBar = g => {
 
 
 ///////////// Customised stack()
+
 class Stack {
     constructor() {
         this.arr = [];

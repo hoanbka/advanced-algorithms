@@ -31,7 +31,6 @@ var Graph = (function(undefined) {
 
         while (open) {
             if (!(keys = extractKeys(open)).length) break;
-
             keys.sort(sorter);
 
             var key = keys[0],
