@@ -1,6 +1,7 @@
 function shortenedString(ss) {
     let stack = [],
         temp = '';
+        
     for (let i = 0; i < ss.length; i += 1) {
         temp = '';
         if (ss[i].match(/\s+/)) {
