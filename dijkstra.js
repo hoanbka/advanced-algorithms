@@ -40,7 +40,6 @@ var Graph = (function(undefined) {
                 adjacentNodes = map[node] || {};
 
             if (!bucket.length) delete open[key];
-
             for (var vertex in adjacentNodes) {
                 if (Object.prototype.hasOwnProperty.call(adjacentNodes, vertex)) {
                     var cost = adjacentNodes[vertex],
