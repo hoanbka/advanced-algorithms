@@ -19,3 +19,4 @@ function smartAssigning(names, statuses, projects, tasks) {
     }
     return tmp[2]
 }
+
