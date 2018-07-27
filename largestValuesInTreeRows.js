@@ -16,7 +16,6 @@ function largestValuesInTreeRows(t) {
     res.push(t.value);
 
     var left = null, right = null;
-
     while(stack.length>0){
         var node  = stack[0];
         stack.shift();
