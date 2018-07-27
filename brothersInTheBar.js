@@ -181,3 +181,69 @@ LinkedListNode < T > NewNextWhenRemoved < T > (LinkedListNode < T > node) {
     } else
         return null;
 }
+
+let brothersInTheBar = g => {
+    let x = r = 0
+
+    while (x <= g.length - 3) {
+        if (g[x] == g[x + 1] && g[x] == g[x + 2]) {
+            r++
+            g.splice(x, 3)
+            x -= 2
+        } else {
+            x++
+        }
+    }
+
+    return r
+}
+
+
+///////////// Customised stack()
+class Stack {
+    constructor() {
+        this.arr = [];
+        this.Count = 0;
+        this.res_counter = 0;
+    }
+    peek() {
+        return (this.Count == 0 ? null : this.arr[this.Count - 1]);
+    }
+    add(item) {
+        let push_new = el => {
+            this.arr.push({ value: el, cnt: 1 });
+            this.Count += 1;
+        }
+        const head = this.peek();
+        if (head) {
+            if (head.value === item) {
+                this.arr[this.Count - 1].cnt += 1;
+                if (this.arr[this.Count - 1].cnt === 3) {
+                    this.res_counter += 1;
+                    this.remove();
+                }
+            } else {
+                push_new(item);
+            }
+        } else {
+            push_new(item);
+        }
+    }
+    remove() {
+        const head = this.peek();
+        if (head.cnt > 3) {
+            this.arr[this.Count - 1].cnt -= 3;
+        } else {
+            this.arr.pop();
+            this.Count -= 1;
+        }
+    }
+}
+
+function brothersInTheBar(glasses) {
+    let stack = new Stack();
+    for (let glass of glasses) {
+        stack.add(glass);
+    }
+    return stack.res_counter;
+}
