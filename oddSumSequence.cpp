@@ -1,8 +1,6 @@
 int oddSumSequence(std::vector < int > v) {
     map < string, int > map;
-    stringstream ss;
-    copy(v.begin(), v.end(), ostream_iterator < int > (ss, "-"));
-    string s = ss.str();
+    string s = convertToString(v);
 
     map[s] = 0;
     int cnt = 0;
@@ -18,9 +16,7 @@ int oddSumSequence(std::vector < int > v) {
             temp.push_back(sum);
         }
 
-        stringstream s2;
-        copy(temp.begin(), temp.end(), ostream_iterator < int > (s2, "-"));
-        string s3 = s2.str();
+        string s3 = convertToString(temp);
 
         if (map.count(s3) > 0) {
             return map[s3];
@@ -32,4 +28,12 @@ int oddSumSequence(std::vector < int > v) {
     }
 
     return 0;
+}
+
+string convertToString(vector<int> v){
+    stringstream s2;
+    copy(v.begin(), v.end(), ostream_iterator < int > (s2, "-"));
+    string s3 = s2.str();
+    return s3;
+
 }
