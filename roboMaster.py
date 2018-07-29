@@ -6,11 +6,7 @@ def roboMaster(shots):
 
 
     for e in shots:
-        # damage = e[2] == "17mm" ? 0.05 : 0.5
-        if e[2] == "17mm":
-            damage = 0.05
-        else:
-            damage = 0.5
+        damage = 0.05 if e[2] == "17mm" else 0.5
         gotFiredBot = e[1]
 
         if gotFiredBot == "red base":
