@@ -1,4 +1,5 @@
-//https://app.codesignal.com/challenge/uf5m9HooxrJQoYZMn
+// https://app.codesignal.com/challenge/uf5m9HooxrJQoYZMn
+
 fs = require('fs')
 q = []
 d = `/root/devops`
@@ -35,13 +36,11 @@ let output = []
 let keys = Object.keys(hash)
 
 for (let i = 0; i < keys.length; i++) {
-    if (!keys[i]) break
-
     output.push('=')
     output.push(keys[i] + ':')
     let values = hash[keys[i]]
     values = sort(values)
-
+    
     j = 0
     min = Math.min(4, values.length)
     while (j < min) {
