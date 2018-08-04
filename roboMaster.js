@@ -5,7 +5,9 @@ function roboMaster(shots) {
         'red 3': 5,
         'red 4': 1,
         'red 5': 1,
-        'red base': 10
+        'red base': 10,
+        'hasBotDestroyed': false,
+        'totalDamage': 0
     }
 
     let blue = {
@@ -14,42 +16,44 @@ function roboMaster(shots) {
         'blue 3': 5,
         'blue 4': 1,
         'blue 5': 1,
-        'blue base': 10
+        'blue base': 10,
+        'hasBotDestroyed': false,
+        'totalDamage': 0
     }
-
-    hasBotDestroyedRed = false
-    hasBotDestroyedBlue = false
 
     for (let i = 0; i < shots.length; i++) {
         let damage = shots[i][2] == '17mm' ? 0.05 : 0.5
         let gotFiredBot = shots[i][1]
 
         if (gotFiredBot == 'red base') {
-            if (hasBotDestroyedRed) red[gotFiredBot] -= damage
-            else continue;
+            if (red.hasBotDestroyed) {
+                red[gotFiredBot] -= damage
+                red.totalDamage += damage
+            } else continue;
         } else if (gotFiredBot == 'blue base') {
-            if (hasBotDestroyedBlue) blue[gotFiredBot] -= damage
-            else continue
+            if (blue.hasBotDestroyed) {
+                blue[gotFiredBot] -= damage
+                blue.totalDamage += damage
+            } else continue
         }
 
         if (blue[gotFiredBot]) {
             blue[gotFiredBot] -= damage
-            if (blue[gotFiredBot] <= 0) hasBotDestroyedBlue = true
+            blue.totalDamage += damage
+            if (blue[gotFiredBot] <= 0) blue.hasBotDestroyed = true
         } else {
-            red[gotFiredBot] -= damage;
-            if (red[gotFiredBot] <= 0) hasBotDestroyedRed = true
+            red[gotFiredBot] -= damage
+            red.totalDamage += damage
+            if (red[gotFiredBot] <= 0) red.hasBotDestroyed = true
         }
     }
-
 
     if (red['red base'] < blue['blue base']) return 'blue'
     else if (red['red base'] > blue['blue base']) return 'red'
 
-    let redValues = Object.values(red).reduce((a, b) => a + b, 0)
-    let blueValues = Object.values(blue).reduce((a, b) => a + b, 0)
-
-    return redValues == blueValues ? 'draw' : redValues > blueValues ? 'red' : 'blue'
+    return red.totalDamage == blue.totalDamage ? 'draw' : red.totalDamage < blue.totalDamage ? 'red' : 'blue'
 }
+
 
 
 
