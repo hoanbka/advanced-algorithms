@@ -51,9 +51,8 @@ function frisbees(friends, numberOfPasses, startingPlayer) {
 
             // compare heldTimes
             if (arr[indices[k]] < expected.heldTimes) {
-                expected.heldTimes = arr[indices[k]];
-                expected.maxDis = obj[indices[k]];
-                expected.index = indices[k];
+
+                updateInfo(expected, arr[indices[k]], obj[indices[k]], indices[k])
 
             } else if (arr[indices[k]] == expected.heldTimes) {
 
@@ -61,17 +60,13 @@ function frisbees(friends, numberOfPasses, startingPlayer) {
                 if (expected.maxDis > obj[indices[k]]) continue;
 
                 else if (expected.maxDis < obj[indices[k]]) {
-                    expected.heldTimes = arr[indices[k]];
-                    expected.maxDis = obj[indices[k]];
-                    expected.index = indices[k];
+                    updateInfo(expected, arr[indices[k]], obj[indices[k]], indices[k])
 
                 } else {
                     // compare indices
                     if (expected.index < indices[k]) continue;
                     else {
-                        expected.heldTimes = arr[indices[k]];
-                        expected.maxDis = obj[indices[k]];
-                        expected.index = indices[k];
+                        updateInfo(expected, arr[indices[k]], obj[indices[k]], indices[k])
                     }
                 }
             }
@@ -84,4 +79,11 @@ function frisbees(friends, numberOfPasses, startingPlayer) {
     }
 
     return currPlayerIndex;
+}
+
+function updateInfo(obj, heldTimes, distance, index) {
+    obj.heldTimes = heldTimes
+    obj.maxDis = distance
+    obj.index = index
+    return obj;
 }
