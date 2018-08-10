@@ -27,7 +27,7 @@ function frisbees(friends, numberOfPasses, startingPlayer) {
 
         let expected = {
             heldTimes: arr[indices[0]],
-            maxDis: obj[indices[0]],
+            distance: obj[indices[0]],
             index: indices[0]
         }
 
@@ -41,9 +41,9 @@ function frisbees(friends, numberOfPasses, startingPlayer) {
             } else if (arr[indices[k]] == expected.heldTimes) {
 
                 // compare distances
-                if (expected.maxDis > obj[indices[k]]) continue;
+                if (expected.distance > obj[indices[k]]) continue;
 
-                else if (expected.maxDis < obj[indices[k]]) {
+                else if (expected.distance < obj[indices[k]]) {
                     updateInfo(expected, arr[indices[k]], obj[indices[k]], indices[k])
 
                 } else {
@@ -67,7 +67,7 @@ function frisbees(friends, numberOfPasses, startingPlayer) {
 
 function updateInfo(obj, heldTimes, distance, index) {
     obj.heldTimes = heldTimes
-    obj.maxDis = distance
+    obj.distance = distance
     obj.index = index
     return obj;
 }
