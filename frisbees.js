@@ -6,24 +6,8 @@ function frisbees(friends, numberOfPasses, startingPlayer) {
     // that he CAN throw a disc (throwingRange >= distance btw 2 players)
     // distance = ((x1 - x2)**2 + (y1 - y2)**2)**.5
     // we also can compare : throwingRange**2 >= (x1 - x2)**2 + (y1 - y2)**2
-    let hash = {};
 
-    for (let i = 0; i < friends.length; i++) {
-
-        let temp = [];
-        let indices = [];
-
-        for (let j = 0; j < friends.length; j++) {
-            if (i == j) continue;
-            let distance = (friends[i][0] - friends[j][0]) ** 2 + (friends[i][1] - friends[j][1]) ** 2
-            if (friends[i][2] ** 2 >= distance) {
-                temp.push([distance, j])
-                indices.push(j);
-            }
-        }
-
-        hash[i] = { 'distance': temp, 'indices': indices };
-    }
+    let hash = distanceAndIndicesMap(friends);
 
     // total of passes so far
     let soFarPasses = 0;
@@ -86,4 +70,27 @@ function updateInfo(obj, heldTimes, distance, index) {
     obj.maxDis = distance
     obj.index = index
     return obj;
+}
+
+function distanceAndIndicesMap(friends) {
+    let hash = {};
+
+    for (let i = 0; i < friends.length; i++) {
+
+        let temp = [];
+        let indices = [];
+
+        for (let j = 0; j < friends.length; j++) {
+            if (i == j) continue;
+            let distance = (friends[i][0] - friends[j][0]) ** 2 + (friends[i][1] - friends[j][1]) ** 2
+            if (friends[i][2] ** 2 >= distance) {
+                temp.push([distance, j])
+                indices.push(j);
+            }
+        }
+
+        hash[i] = { 'distance': temp, 'indices': indices };
+    }
+
+    return hash
 }
