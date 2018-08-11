@@ -5,7 +5,7 @@ function oneWordStory(words, sentences) {
     let picked = {};
     words.map((e, i) => picked[i] = false)
 
-    for (let i = 0; i < sentences.length; i++) {
+    for (i in sentences) {
 
         ans.push(sentences[i]);
         let lastWord = sentences[i].substr(sentences[i].lastIndexOf(' ') + 1);
@@ -13,7 +13,7 @@ function oneWordStory(words, sentences) {
         let selectedWord;
         let index;
 
-        for (let j = 0; j < words.length; j++) {
+        for (j in words) {
             // word at index j was picked, ignore it
             if (picked[j]) continue;
 
@@ -24,13 +24,13 @@ function oneWordStory(words, sentences) {
                 continue;
             }
 
-            let maxDiff = levenshteinDistance(lastWord, words[j]);
-            if (maxDiff > max) {
-                max = maxDiff;
+            let dis = levenshteinDistance(lastWord, words[j]);
+            if (dis > max) {
+                max = dis;
                 selectedWord = words[j];
                 index = j;
 
-            } else if (maxDiff == max) {
+            } else if (dis == max) {
                 if (words[j] > selectedWord) {
                     selectedWord = words[j];
                     index = j;
