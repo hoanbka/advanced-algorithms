@@ -1,3 +1,8 @@
+/*
+Given three equal-length arrays, array1, array2, and array3, 
+your task is to find the number of combinations of indices i, j, and k, such that array1[i] < array2[j] < array3[k].
+*/
+
 function combinationCount(a1, a2, a3) {
     a1.sort((a, b) => a - b)
     a2.sort((a, b) => a - b)
