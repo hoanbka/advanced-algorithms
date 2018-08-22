@@ -26,9 +26,7 @@ function rockPaperScissor(opponent) {
             you = opponent[i];
 
 
-        } else if (you == 'S' && opponent[i] == 'R' ||
-            you == 'P' && opponent[i] == 'S' ||
-            you == 'R' && opponent[i] == 'P') {
+        } else if (you !== opponent[i]) {
 
             losses++;
             hash[you]++;
