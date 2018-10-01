@@ -1,19 +1,16 @@
 function studyOrSleep(familiarity, hoursRemaining) {
 
-    let hour = 0;
-    let curr = familiarity;
-    let newFamiliarity;
-    let unfamiliarity = 100 - familiarity;
-    let expected = [curr];
-    let penalty = 0;
+    let curr = familiarity,
+        unfamiliarity = 100 - familiarity,
+        expected = [curr],
+        penalty = 0;
 
     while (hoursRemaining > 0) {
-        
-        hour++;
-        hoursRemaining--;
 
-        let familiarityIncrease = unfamiliarity / 5;
-        curr += familiarityIncrease;
+        hoursRemaining--;
+        let increase = unfamiliarity / 5;
+        curr += increase;
+
         if (hoursRemaining < 8) penalty += 5;
         let temp = curr - penalty;
 
