@@ -1,5 +1,4 @@
 function finalSlacker(weights, scores) {
-    let grades = [90, 80, 70, 60, 0];
 
     let sum = [];
     let score = 0;
@@ -11,13 +10,7 @@ function finalSlacker(weights, scores) {
     }
 
     let min;
-    for (let i = 0; i < grades.length; i++) {
-        if (score >= grades[i]) {
-            min = grades[i];
-            break;
-        }
-    }
-
+    min = scores >= 90 ? 90 : scores >= 80 ? 80 : scores >= 70 ? 70 : scores >= 60 ? 60 : 0;
 
     let x;
     x = (min - weights[0] * sum[0] - weights[1] * sum[1]) / weights[2];
