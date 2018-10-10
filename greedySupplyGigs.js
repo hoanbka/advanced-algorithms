@@ -13,7 +13,6 @@ function greedySupplyGigs(offers) {
         else accept[x] = 1
     }
 
-    let first = helper(offers[0]).sort((a, b) => b[0] - a[0] || a[1] - b[1]);
     for (let i = 0; i < offers.length; i++) {
 
         if (offers[i].length == 0) continue;
