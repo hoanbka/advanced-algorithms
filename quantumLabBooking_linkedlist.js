@@ -13,22 +13,19 @@ function quantumLabBooking(friends, firstInLine, k) {
     queue.push(...map[firstInLine])
 
     let index = 0;
-    let ans;
 
     while (true) {
-        let temp = queue[index];
-        if (temp == undefined) break;
+        let student = queue[index];
+        if (student == undefined) break;
         index++;
 
-        if (index == k) {
-            ans = temp;
-            break;
-        }
-        queue.push(...map[temp])
+        if (index == k) return student;
+        queue.push(...map[student])
     }
 
-    return ans !== undefined ? ans : -1;
+    return -1;
 }
+
 // the above solution has time complexity O(n^2) 
 // we can solve the challenge with linked list.
 
