@@ -1,4 +1,38 @@
 function quantumLabBooking(friends, firstInLine, k) {
+    let queue = [];
+    let map = {};
+
+    for (let i = 0; i < friends.length; i++) {
+        let temp = [];
+        friends[i].forEach((e, i) => {
+            if (e == 1) temp.push(i)
+        })
+        map[i] = temp;
+    }
+
+    queue.push(...map[firstInLine])
+
+    let index = 0;
+    let ans;
+
+    while (true) {
+        let temp = queue[index];
+        if (temp == undefined) break;
+        index++;
+
+        if (index == k) {
+            ans = temp;
+            break;
+        }
+        queue.push(...map[temp])
+    }
+
+    return ans !== undefined ? ans : -1;
+}
+// the above solution has time complexity O(n^2) 
+// we can solve the challenge with linked list.
+
+function quantumLabBooking(friends, firstInLine, k) {
 
     class Node {
         constructor(value) {
