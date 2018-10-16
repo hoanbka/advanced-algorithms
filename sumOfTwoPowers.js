@@ -20,3 +20,17 @@ sumOfTwoPowers = (n, k, a = [], i = 0) => {
 
     return a
 }
+
+sumOfTwoPowers = (n, k, a = [], i = 0) => {
+    for (;; i++) {
+
+        if ((x = i ** k) > n) break
+        j = i
+        while (1) {
+            if (x + (y = j++ ** k) == n) a.push([x, y])
+            else if (x + y > n) break
+        }
+    }
+
+    return a
+}
