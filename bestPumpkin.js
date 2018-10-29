@@ -1,45 +1,33 @@
 function bestPumpkin(design, pumpkinDimensions) {
-    let cnt = 0;
-    let maxWidth;
-    let first, last;
-    let arr = [];
+    let width, height;
 
     function swap([a, b]) {
         return a < b ? [a, b] : [b, a];
     }
 
-    for (let i = 0; i < design.length; i++) {
-        if (design[i].indexOf('#') !== -1) {
-            if (first == undefined) first = i;
-            else last = i;
+    let [top, bottom, left, right] = getBoudingDimentions(design);
 
-            arr.push(design[i].indexOf('#'));
-            arr.push(design[i].lastIndexOf('#'))
-        }
-    }
+    height = bottom - top + 1;
+    width = right - left + 1
 
-    let height = last == undefined ? 1 : last - first + 1;
+    let standardRatio = height < width ? height / width : width / height;
 
-    arr.sort((a, b) => a - b)
-    maxWidth = arr[arr.length - 1] - arr[0] + 1;
-    let standardRatio = height < maxWidth ? height / maxWidth : maxWidth / height;
-
-    let min = 10e5;
+    let min = 1;
     let area;
     let best = 0;
 
     for (let i = 0; i < pumpkinDimensions.length; i++) {
-        let processor = swap(pumpkinDimensions[i]);
+        let pair = swap(pumpkinDimensions[i]);
 
-        let absDiff = Math.abs(processor[0] / processor[1] - standardRatio);
+        let absDiff = Math.abs(pair[0] / pair[1] - standardRatio);
         if (absDiff < min) {
             min = absDiff;
-            area = processor[0] * processor[1];
+            area = pair[0] * pair[1];
             best = i;
 
         } else if (absDiff == min) {
-            if (processor[0] * processor[1] > area) {
-                area = processor[0] * processor[1];
+            if (pair[0] * pair[1] > area) {
+                area = pair[0] * pair[1];
                 best = i;
             }
         }
@@ -47,6 +35,25 @@ function bestPumpkin(design, pumpkinDimensions) {
     }
 
     return best;
+}
+
+function getBoudingDimentions(design) {
+    let top, bottom, right = -1,
+        left = 31;
+
+    for (let i = 0; i < design.length; i++) {
+        if (design[i].indexOf('#') !== -1) {
+            if (top == undefined) {
+                top = i;
+                bottom = i;
+            } else bottom = i;
+
+            left = Math.min(left, design[i].indexOf('#'))
+            right = Math.max(right, design[i].lastIndexOf('#'))
+        }
+    }
+
+    return [top, bottom, left, right]
 }
 
 let design = ["..............................",
