@@ -27,8 +27,7 @@ string[] secretAgentsMeetingProposal(string incomingMessage, int codeNumberDiff)
             bool check = false;
             int tmp = 0;
 
-            string yes = "5.9.12";
-            string no = "13.7";
+            string yes = "5.9.12", no = "13.7";
             string[] output = new string[2];
      
             for (int i = 0; i < tokens.Length; i++)
@@ -49,17 +48,12 @@ string[] secretAgentsMeetingProposal(string incomingMessage, int codeNumberDiff)
                         int v = Int32.Parse(tokens[i]) + tmp;
                         string key = v.ToString();
                         ans += dict[key];
+                        continue;
                     }
-                    else
-                    {
-                        ans += dict[tokens[i]];
-                    }
+                   
                 }
-                else
-                {
-                    ans += dict[tokens[i]];
-                }
-
+                
+                ans += dict[tokens[i]];
             }
 
             output[0] = ans;
