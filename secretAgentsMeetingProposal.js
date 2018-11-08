@@ -35,28 +35,28 @@ function secretAgentsMeetingProposal(incomingMessage, codeNumberDiff) {
             continue;
         }
 
-        if (check) {
-
-            if (!isNaN(arr[i])) ans += map[(Number(arr[i]) + tmp) + ''];
-            else ans += map[arr[i]];
-
+        if (check && !isNaN(arr[i])) {
+           ans += map[(Number(arr[i]) + tmp) + ''];
         } else ans += map[arr[i]]
 
     }
 
     let yes = '5.9.12',
         no = '13.7';
+    out = [ans];
 
     if (ans.indexOf('today') !== -1) {
-        if (ans.indexOf('park') == -1) return [ans, '13.7']
-        else return [ans, yes]
+        if (ans.indexOf('park') == -1) out[1] = no;
+        else out[1] = yes;
     } else if (ans.indexOf('twodays') !== -1) {
-        if (ans.indexOf('restaurant') !== -1 && ans.indexOf('morning') !== -1) return [ans, yes]
-        else return [ans, no]
+        if (ans.indexOf('restaurant') !== -1 && ans.indexOf('morning') !== -1) out[1] = yes;
+        else out[1] = no;
     } else {
         // tomorrow
         if (ans.indexOf('bar') !== -1 && ans.indexOf('night') !== -1 ||
-            ans.indexOf('park') !== -1 && ans.indexOf('afternoon') !== -1) return [ans, yes]
-        else return [ans, no]
+            ans.indexOf('park') !== -1 && ans.indexOf('afternoon') !== -1) out[1] = yes;
+        else out[1] = no;
     }
+
+    return out;
 }
