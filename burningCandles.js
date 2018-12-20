@@ -22,20 +22,25 @@ function burningCandles(candleSizes, n) {
 
             // push new candle to candleSizes
             // and maintain candleSizes sorted
-            candleSizes = pushInOrder(candleSizes, newCandle);
+            let index = sortedIndex(candleSizes, newCandle);
+            candleSizes.splice(index, 0, newCandle);
         }
     }
 
     return total;
 }
 
-function pushInOrder(arr, item) {
-    let ix = 0;
-    while (ix < arr.length) {
-        if (item < arr[ix]) { break; }
-        ix++;
-    }
+// binary search to find index in array to add value
+// to maintain a sorted list
+// NOTE: array must be sorted
+function sortedIndex(array, value) {
+    var low = 0,
+        high = array.length;
 
-    arr.splice(ix, 0, item);
-    return arr
+    while (low < high) {
+        var mid = (low + high) >>> 1;
+        if (array[mid] < value) low = mid + 1;
+        else high = mid;
+    }
+    return low;
 }
