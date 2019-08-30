@@ -39,15 +39,9 @@ function maxSumSegments(arr) {
 
 function sum(arr) {
     let s = 0;
-    let tmp = [];
     for (let i = 0; i < arr.length; i++) {
-        tmp.push(arr[i][0])
+        s += arr[i][0];
     }
-
-    for (let i = 0; i < tmp.length; i++) {
-        s += tmp[i];
-    }
-
     return s;
 }
 // console.log(maxSumSegments([-1, 2, 1, 3, -2]))
